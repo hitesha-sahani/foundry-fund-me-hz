@@ -64,8 +64,3 @@ $ forge --help
 $ anvil --help
 $ cast --help
 ```
-
-//forge test --match-test testPriceFeedVersion -vvv --fork-url $SEPOLIA_RPC_URL if we dont run on an environment then foundry automatically takes an anvil contract to test functions but if we pass different URLs using fork then it will simulate that chain.  
-//testing is recommended for contracts , forge coverage --fork-url $SEPOLIA_RPC_URL 
-// for coverage it shows how much % of code is actually tested
-//chisel allows us to write solidity line by line in terminal just like we do python in jupyter notebook
