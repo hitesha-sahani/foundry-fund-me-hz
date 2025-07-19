@@ -20,7 +20,7 @@ Foundry includes the following tools:
 
 ## 📁 What's Inside This Project?
 
-- ✅ Core smart contracts (`FundMe.sol`, `MockV3Aggregator.sol`)
+- ✅ Core smart contracts (`src/`)
 - ✅ Scripts for deployment and automation (`script/`)
 - ✅ Unit and integration tests using Forge (`test/`)
 - ✅ Mock contracts for simulating real-world data feeds (Chainlink)
