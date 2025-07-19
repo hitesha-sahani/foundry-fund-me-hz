@@ -1,66 +1,125 @@
-## Foundry
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+# Foundry Fund Me Project
 
-Foundry consists of:
+This project is a simulation of a decentralized funding smart contract using [Foundry](https://book.getfoundry.sh/), a blazing fast and modular Ethereum development toolkit written in Rust.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+It is designed to **test, simulate, and understand smart contract development, testing, deployment, and price feed interactions** (like with Chainlink oracles) in a local development environment.
 
-## Documentation
+---
 
-https://book.getfoundry.sh/
+## 🛠️ Foundry Toolkit Overview
 
-## Usage
+Foundry includes the following tools:
 
-### Build
+- **Forge** – A fast, flexible Ethereum testing framework  
+- **Cast** – A CLI for interacting with contracts and sending transactions  
+- **Anvil** – A local Ethereum node for testing (Ganache alternative)  
+- **Chisel** – Solidity REPL (interactive prompt for Solidity code)
 
-```shell
-$ forge build
+---
+
+## 📁 What's Inside This Project?
+
+- ✅ Core smart contracts (`FundMe.sol`, `MockV3Aggregator.sol`)
+- ✅ Scripts for deployment and automation (`script/`)
+- ✅ Unit and integration tests using Forge (`test/`)
+- ✅ Mock contracts for simulating real-world data feeds (Chainlink)
+- ✅ Local blockchain setup using Anvil
+- ✅ Testing gas consumption and behavior
+- ✅ Structured and modular layout for clarity
+
+---
+
+## 📦 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/hitesha-sahani/foundry-fund-me-hz
+cd foundry-fund-me-hz
 ```
 
-### Test
+### 2. Install Foundry
 
-```shell
-$ forge test
+```bash
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
 ```
 
-### Format
+### 3. Install Dependencies and Build
 
-```shell
-$ forge fmt
+```bash
+forge install
+forge build
 ```
 
-### Gas Snapshots
+### 4. Run Tests
 
-```shell
-$ forge snapshot
+```bash
+forge test
 ```
 
-### Anvil
+### 5. Run a Local Node
 
-```shell
-$ anvil
+```bash
+anvil
 ```
 
-### Deploy
+### 6. Deploy Script (Optional)
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```bash
+forge script script/FundMe.s.sol:FundMeScript --rpc-url <YOUR_RPC_URL> --private-key <YOUR_PRIVATE_KEY>
 ```
 
-### Cast
+> Replace `<YOUR_RPC_URL>` and `<YOUR_PRIVATE_KEY>` with your environment variables or real values.
 
-```shell
-$ cast <subcommand>
-```
+---
 
-### Help
+## 🔌 Frontend Integration
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+The frontend integration is available in a separate repository:
+
+👉 [html-fund-me-hz](https://github.com/hitesha-sahani/html-fund-me-hz)
+
+This repository provides:
+- Basic wallet connection (e.g., MetaMask)
+- HTML/CSS/JS interface for user interactions
+- Connects directly to the deployed smart contract
+
+---
+
+## 🧪 Highlights
+
+- ✅ Complete test suite with mocks for Chainlink price feeds
+- ✅ Simulated deployments and interaction with smart contracts
+- ✅ Tracks gas usage and compares different patterns
+- ✅ Fully offline development and testing environment
+- ✅ Works across testnets (Goerli, Sepolia) or local node, just add your desired chainid in HelperConfig
+
+---
+
+## 🧠 Summary
+
+This project helps you learn:
+- Writing secure smart contracts
+- Using mocks to simulate live data (like ETH/USD price)
+- Deploying and scripting smart contract behavior
+- Testing edge cases and failures with Forge
+- Interacting with blockchain locally via Anvil
+- Building frontend integrations for smart contracts
+
+Even without deploying to a real network, you can test everything using **mock price feeds** and **Anvil simulation**.
+
+---
+
+## 📚 Resources
+
+- [Foundry Book](https://book.getfoundry.sh/)
+- [Solidity Docs](https://docs.soliditylang.org/)
+- [Chainlink Docs](https://docs.chain.link/)
+
+---
+
+## 🤝 Contributions
+
+Feel free to fork, improve, or raise issues. This project is intended for learning, experimenting, and showcasing Solidity & Foundry development.

@@ -2,7 +2,6 @@
 //Otherwise, we deploy the real contracts
 //We can use the same contract for different networks, but we need to keep track of the
 //addresses of the deployed contracts for each network.
-//Keep track of different contracts for different networks
 
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
@@ -37,7 +36,9 @@ contract HelperConfig is Script {
     function getSepoliaEThConfig() public pure returns (NetworkConfig memory) {
         // Sepolia ETH / USD Address
         // https://docs.chain.link/data-feeds/price-feeds/addresses
-        NetworkConfig memory sepoliaConfig = NetworkConfig({priceFeed: 0x694AA1769357215DE4FAC081bf1f309aDC325306});
+        NetworkConfig memory sepoliaConfig = NetworkConfig({
+            priceFeed: 0x694AA1769357215DE4FAC081bf1f309aDC325306
+        });
         return sepoliaConfig;
     }
 
@@ -53,10 +54,15 @@ contract HelperConfig is Script {
         //Deploy the mocks
         //Return the mock address
         vm.startBroadcast();
-        MockV3Aggregator mockPriceFeed = new MockV3Aggregator(DECIMALS, INITIAL_PRICE);
+        MockV3Aggregator mockPriceFeed = new MockV3Aggregator(
+            DECIMALS,
+            INITIAL_PRICE
+        );
 
         vm.stopBroadcast();
-        NetworkConfig memory anvilConfig = NetworkConfig({priceFeed: address(mockPriceFeed)});
+        NetworkConfig memory anvilConfig = NetworkConfig({
+            priceFeed: address(mockPriceFeed)
+        });
         return anvilConfig;
     }
 }
